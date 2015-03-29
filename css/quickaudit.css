@@ -1,0 +1,28 @@
+body {
+	background-color: #eeffbb;
+	padding: 50px;
+}
+.panel-default {
+  border-color: #bbcc77;
+}
+.panel-default > .panel-heading {
+	background-image: -webkit-linear-gradient(top,#eeffaa 0,#ccdd88 100%);
+	background-image: -o-linear-gradient(top,#eeffaa 0,#ccdd88 100%);
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#eeffaa),to(#ccdd88));
+	background-image: linear-gradient(to bottom,#eeffaa 0,#ccdd88 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeffaa', endColorstr='#ffccdd88', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+	background-repeat: repeat-x;
+	border-color: #bbcc77;
+	color: #99aa55;
+}
+.btn-primary {
+	background-image: -webkit-linear-gradient(top,#8b8f14 0,#6b6f00 100%);
+	background-image: -o-linear-gradient(top,#8b8f14 0,#6b6f00 100%);
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#8b8f14),to(#6b6f00));
+	background-image: linear-gradient(to bottom,#8b8f14 0,#6b6f00 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff8b8f14', endColorstr='#ff6b6f00', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+	background-repeat: repeat-x;
+	border-color: #245580;
+}
