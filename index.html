@@ -13,18 +13,21 @@
 
 		<div class="container" data-ng-controller="quickAuditController">
         
-            <div class="panel panel-default">
-                <div class="panel-heading">To start the Sage Quick Audit, click the Start button:</div>
+            <div id="intro" ng-if="!started">
+                <h1>Sage Quick Audit</h1>
                 <div class="panel-body">
-                    <button class="btn btn-lg btn-primary">Start</button>
+                    <button class="btn btn-lg btn-primary" data-ng-click="start()">Start</button>
                 </div>
             </div>
-            
-            <div class="panel panel-default">
-                <div class="panel-heading">Questions</div>
+                
+            <div  id="questions" class="panel panel-default" ng-if="started" data-ng-cloak>
+                <div class="panel-heading">
+                    Questions
+                    <button class="btn btn-sm btn-primary pull-right" data-ng-click="submit()">Submit</button>
+                </div>
                 <div class="panel-body" data-ng-cloak>
-					<ul class="list-group">
-                    	<li class="list-group-item" data-ng-repeat="question in quickAudit.questions">{{ question.question }}</li>
+                    <ul class="list-group">
+                        <li class="list-group-item" data-ng-repeat="question in quickAudit.questions">{{ question.question }}</li>
                     </ul>
                 </div>
             </div>
