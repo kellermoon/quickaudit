@@ -22,8 +22,10 @@
             
             <div class="panel panel-default">
                 <div class="panel-heading">Questions</div>
-                <div class="panel-body">
-                    <p>{{ data.questions }}</p>
+                <div class="panel-body" data-ng-cloak>
+					<ul class="list-group">
+                    	<li class="list-group-item" data-ng-repeat="question in quickAudit.questions">{{ question.question }}</li>
+                    </ul>
                 </div>
             </div>
             

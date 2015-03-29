@@ -16,6 +16,10 @@ body {
 	border-color: #bbcc77;
 	color: #99aa55;
 }
+.btn-primary:focus, .btn-primary:hover {
+  background-color: #6b6f00;
+  background-position: 0 -15px;
+}
 .btn-primary {
 	background-image: -webkit-linear-gradient(top,#8b8f14 0,#6b6f00 100%);
 	background-image: -o-linear-gradient(top,#8b8f14 0,#6b6f00 100%);
@@ -25,4 +29,7 @@ body {
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 	background-repeat: repeat-x;
 	border-color: #245580;
+}
+.list-group:last-of-type {
+	margin-bottom: 0;
 }
