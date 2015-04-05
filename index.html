@@ -9,18 +9,32 @@
 
         <title>Quick Audit &mdash; Sage Office Solutions</title>
     </head>
-    <body data-ng-app="quickAudit">
+    <body data-ng-app="quickAudit" data-ng-controller="quickAuditController">
 
-		<div class="container-fluid" data-ng-controller="quickAuditController">
-        
+
+		<!-- Masthead BEGINS -->
+        <nav class="navbar navbar-default" id="masthead">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="/"><span>Sage</span> Office Solutions</a>
+            </div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <button class="btn btn-sm btn-primary" data-ng-click="start()">Start</button>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+		<!-- Masthead BEGINS -->
+
+
+		<!-- Main Content Container BEGINS -->
+		<main class="container-fluid">
             <div id="intro" ng-if="!started">
                 <h1>Sage Quick Audit</h1>
-                <div class="panel-body">
-                    <button class="btn btn-lg btn-primary" data-ng-click="start()">Start</button>
-                </div>
             </div>
                 
-            <div  id="questions" class="panel panel-default" ng-if="started" data-ng-cloak>
+            <div id="questions" class="panel panel-default" ng-if="started" data-ng-cloak>
                 <div class="panel-heading">
                     Questions
                     <button class="btn btn-sm btn-primary pull-right" data-ng-click="submit()">Submit</button>
@@ -30,9 +44,10 @@
                         <li class="list-group-item" data-ng-repeat="question in quickAudit.questions">{{ question.question }}</li>
                     </ul>
                 </div>
-            </div>
-            
-        </div>
+            </div> 
+        </main>
+		<!-- Main Content Container ENDS -->
+
 
     </body>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>

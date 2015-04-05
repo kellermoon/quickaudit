@@ -1,6 +1,5 @@
 body {
 	background-color: #eeffbb;
-	padding-top: 50px;
 	padding-bottom: 50px;
 }
 
@@ -45,6 +44,30 @@ body {
 
 
 
+#masthead {
+	background-color: #8b8f14;
+}
+#masthead {
+	border: 0;
+}
+#masthead .container-fluid {
+	background-color: #8b8f14;
+}
+#masthead .navbar-brand {
+	color: #cd9;
+	text-shadow: none;
+}
+#masthead .navbar-brand span {
+	color: #efb;
+	text-shadow: none;
+}
+#masthead .btn-primary {
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	margin: 8px 0;
+}
 #intro {
+	color: #8b8f14;
+	padding: 50px 0;
 	text-align: center;
 }
