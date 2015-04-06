@@ -1,4 +1,14 @@
+
+
+@font-face {
+    font-family: "Century Gothic";
+    src: url(../fonts/gothic_0.TTF);
+}
+
+
+
 body {
+	font-family: "Century Gothic", sans-serif;
 	background-color: #eeffbb;
 	padding-bottom: 50px;
 }
@@ -56,18 +66,22 @@ body {
 #masthead .navbar-brand {
 	color: #cd9;
 	text-shadow: none;
+	text-transform: lowercase;
 }
 #masthead .navbar-brand span {
-	color: #efb;
+	color: #fff;
 	text-shadow: none;
 }
 #masthead .btn-primary {
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	margin: 8px 0;
+	padding-left: 14px;
+	padding-right: 10px;
 }
 #intro {
 	color: #8b8f14;
-	padding: 50px 0;
+	padding: 80px 0;
 	text-align: center;
+	text-transform: lowercase;
 }
