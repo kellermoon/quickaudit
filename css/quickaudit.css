@@ -20,6 +20,7 @@ body {
 .btn-primary:focus, .btn-primary:hover {
 	background-color: #6b6f00;
 	background-position: 0 -15px;
+	border-color: #3b3f00;
 }
 .btn-primary {
 	background-image: -webkit-linear-gradient(top,#8b8f14 0,#6b6f00 100%);
