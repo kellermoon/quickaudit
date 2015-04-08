@@ -45,9 +45,9 @@ body {
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 	background-repeat: repeat-x;
 	border-color: #3b3f00;
-	letter-spacing: 5px;
-	padding-left: 14px;
-	padding-right: 10px;
+	letter-spacing: 3px;
+	padding-left: 10px;
+	padding-right: 7px;
 	text-transform: lowercase;
 }
 .panel-default {
