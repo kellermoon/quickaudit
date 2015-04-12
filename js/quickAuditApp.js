@@ -5,16 +5,22 @@ quickAudit.controller("quickAuditController", function($scope, $firebaseObject) 
 	var quickAuditSyncArray = $firebaseObject(quickAuditDataRef);
 	
 	quickAuditSyncArray.$bindTo($scope, "quickAudit");
-	var response = quickAuditDataRef.child("responses");
+	var responses = quickAuditDataRef.child("responses");
 	
+	$scope.response = [];
+	quickAuditSyncArray.$loaded().then(function() {
+		angular.forEach($scope.quickAudit.questions, function() {
+			$scope.response.push("no");
+		});
+	});
 	$scope.started = false;
 	$scope.start = function() {
 		$scope.started = true;
 	}
 	$scope.submit = function() {
 		$scope.started = false;
-		response.push({
-			question1: "yes"
-		});
+		responses.push($scope.response);
+		//responses.push("no");
 	}
+	
 });
