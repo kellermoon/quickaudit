@@ -37,7 +37,13 @@
                 </div>
                 <div class="panel-body" data-ng-cloak>
                     <ul class="list-group">
-                        <li class="list-group-item" data-ng-repeat="question in quickAudit.questions">{{ question.question }}</li>
+                        <li class="list-group-item" data-ng-repeat="question in quickAudit.questions">
+                        	{{ question.question }}
+                            <div class="input-group question">
+                            	<input type="radio" name="question{{$index}}" value="yes"> Yes
+								<input type="radio" name="question{{$index}}" value="no"> No
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div> 

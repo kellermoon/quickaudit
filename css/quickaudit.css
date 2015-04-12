@@ -68,6 +68,9 @@ body {
 	padding-top: 2px;
 	padding-bottom: 2px;
 }
+.panel-body {
+	background-color: #eeffcc;
+}
 .list-group:last-of-type {
 	margin-bottom: 0;
 }
