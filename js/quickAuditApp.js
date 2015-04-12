@@ -20,7 +20,6 @@ quickAudit.controller("quickAuditController", function($scope, $firebaseObject) 
 	$scope.submit = function() {
 		$scope.started = false;
 		responses.push($scope.response);
-		//responses.push("no");
 	}
 	
 });
