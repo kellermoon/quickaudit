@@ -80,7 +80,25 @@ body {
 .list-group-item {
 	border-color: #ded;
 }
-
+.input-group,
+.input-group input,
+.input-group span {
+	height: 20px;
+	line-height: 20px;
+	margin: 4px 0 0;
+	vertical-align: middle;
+}
+.input-group input {
+	display: inline-block;
+	margin-left: 10px;
+}
+.input-group input:first {
+	margin-left: 0;	
+}
+.input-group span {
+	display: inline-block;
+	margin-left: 5px;
+}
 
 
 
