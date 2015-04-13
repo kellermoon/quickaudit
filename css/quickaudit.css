@@ -19,16 +19,19 @@ body {
 .navbar-header {
 	width: 100%;
 }
-.btn {
-	border-color: #3b3f00;
-}
+.btn,
 .btn:hover,
 .btn.hover,
-.btn.active.focus,
-.btn.active:focus,
-.btn.focus {
+.btn-primary.active.focus,
+.btn-primary.active:focus,
+.btn-primary.focus:active,
+.btn.focus:active,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
 	border-color: #3b3f00;
-	outline: none;
+	outline-style: none;
 }
 .btn-primary:active,
 .btn-primary:focus,
