@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="css/quickaudit.css">
         <title>Quick Audit &mdash; Sage Office Solutions</title>
     </head>
-    <body data-ng-app="quickAudit" data-ng-controller="quickAuditController">
+    <body data-ng-app="quickAudit" data-ng-controller="QuickAuditController">
 
 
 		<!-- Masthead BEGINS -->
@@ -36,15 +36,14 @@
                     quick audit
                 </div>
                 <div class="panel-body" data-ng-cloak>
-                	<form name="response">
+                	<form name="phil">
                         <ul class="list-group">
                             <li class="list-group-item" data-ng-repeat="question in quickAudit.questions">
                                 {{ question.question }}
                                 <div class="input-group question">
                                     <ng-form>
-                                        <input type="radio" ng-model="response[$index]" value="yes"><span>Yes</span>
-                                        <input type="radio" ng-model="response[$index]" value="no"><span>No</span>
-                                    </ng-form>
+                                        <input type="radio" data-ng-model="response[$index]" value="yes"><span>Yes</span>
+                                    	<input type="radio" data-ng-model="response[$index]" value="no"><span>No</span>                                    </ng-form>
                                 </div>
                             </li>
                         </ul>
