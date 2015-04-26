@@ -12,15 +12,18 @@ var quickAudit = angular.module("quickAudit", ["firebase", "ngRoute"])
 	quickAuditSyncArray.$bindTo($scope, "quickAudit");
 
 	$scope.started = false;
+	$scope.submitted = false;
 	$scope.response = [];
-
+	
 	$scope.start = function() {
 		$scope.started = true;
+		$location.path("/questions");
 	}
 	$scope.submit = function() {
-		$scope.started = false;
+		$scope.submitted = true;
 		responses.push($scope.response);
 		$scope.response = [];
+		$location.path("/thankyou");
 	}
 })
 
@@ -53,7 +56,8 @@ var quickAudit = angular.module("quickAudit", ["firebase", "ngRoute"])
 					}
 				}
 			})
-			.when('/questions', {
+/*			.when('/', {redirectTo: '/welcome'} )
+*/			.when('/questions', {
 				templateUrl: 'partials/questions.html',
 				controller: 'QuestionsController'
 			})
@@ -61,5 +65,7 @@ var quickAudit = angular.module("quickAudit", ["firebase", "ngRoute"])
 				templateUrl: 'partials/thankyou.html',
 				controller: 'ThankyouController'
 			})
-			.otherwise( {redirectTo: '/welcome'} );
+			.otherwise(
+				{redirectTo: '/welcome'}
+			);
 	}]);

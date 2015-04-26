@@ -17,19 +17,13 @@
         <nav class="navbar navbar-default navbar-fixed-top" id="masthead">
           <div class="container-fluid">
             <div class="navbar-header">
-              <a class="navbar-brand" href="/"><span>Sage</span> Office Solutions</a>
-              <button class="btn btn-sm btn-primary pull-right" data-ng-click="start()" data-ng-cloak data-ng-show="!started" data-ng-if="!started">start</button>
-              <button class="btn btn-sm btn-primary pull-right" data-ng-click="submit()" data-ng-cloak data-ng-show="started" data-ng-if="started">submit</button>
+              <a class="navbar-brand" href="/quickaudit"><span>Sage</span> Office Solutions</a>
+              <button class="btn btn-sm btn-primary pull-right" data-ng-click="start()" data-ng-cloak data-ng-show="!started" data-ng-if="!started && !submitted">start</button>
+              <button class="btn btn-sm btn-primary pull-right" data-ng-click="submit()" data-ng-cloak data-ng-show="started" data-ng-if="started && !submitted">submit</button>
             </div>
           </div><!-- /.container-fluid -->
         </nav>
 		<!-- Masthead BEGINS -->
-
-		<div id="tempnav">
-            <a href="#/welcome">Welcome</a> |
-            <a href="#/questions">Questions</a> |
-            <a href="#/thankyou">Thank You</a>
-		</div>
 
 		<!-- Main Content Container BEGINS -->
 		<main ng-view class="container-fluid"></main>

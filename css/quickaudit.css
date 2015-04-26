@@ -53,6 +53,9 @@ body {
 	padding-right: 7px;
 	text-transform: lowercase;
 }
+h1.page_header {
+	text-align: center;
+}
 .panel-default {
   border-color: #bbcc77;
 }
