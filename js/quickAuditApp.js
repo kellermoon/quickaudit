@@ -39,29 +39,27 @@ var quickAudit = angular.module("quickAudit", ["firebase", "ngRoute"])
 	$scope.params = $routeParams;
 })
 
-.config(function($routeProvider, $locationProvider) {
-  $routeProvider
-   .when('/welcome', {
-    templateUrl: '/quickaudit/partials/welcome.html',
-    controller: 'WelcomeController',
-    resolve: {
-      delay: function($q, $timeout) {
-        var delay = $q.defer();
-        $timeout(delay.resolve, 1000);
-        return delay.promise;
-      }
-    }
-  })
-  .when('/questions', {
-    templateUrl: '/quickaudit/partials/questions.html',
-    controller: 'QuestionsController'
-  })
-  .when('/thankyou', {
-    templateUrl: '/quickaudit/partials/thankyou.html',
-    controller: 'ThankyouController'
-  })
- .otherwise({redirectTo: '/welcome'});
- 
-  // configure html5 to get links working on jsfiddle
-  $locationProvider.html5Mode(true);
-});
+.config(['$routeProvider',
+	function($routeProvider) {
+		$routeProvider
+			.when('/welcome', {
+				templateUrl: 'partials/welcome.html',
+				controller: 'WelcomeController',
+				resolve: {
+					delay: function($q, $timeout) {
+						var delay = $q.defer();
+						$timeout(delay.resolve, 1000);
+						return delay.promise;
+					}
+				}
+			})
+			.when('/questions', {
+				templateUrl: 'partials/questions.html',
+				controller: 'QuestionsController'
+			})
+			.when('/thankyou', {
+				templateUrl: 'partials/thankyou.html',
+				controller: 'ThankyouController'
+			})
+			.otherwise( {redirectTo: '/welcome'} );
+	}]);
