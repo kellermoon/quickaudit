@@ -128,14 +128,9 @@ h1.page_header {
 #masthead .btn-primary:active {
 	border-color: #3b3f00;
 }
-#intro {
+#welcome,
+#thankyou {
 	color: #8b8f14;
 	padding: 20px 0;
 	text-align: center;
-}
-#intro .btn-primary {
-	margin: 0;
-}
-#thankyou {
-	text-align: center;	
 }
