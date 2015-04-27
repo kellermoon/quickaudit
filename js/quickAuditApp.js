@@ -14,50 +14,57 @@ var quickAudit = angular.module("quickAudit", ["firebase", "ngRoute"])
 	$scope.started = false;
 	$scope.submitted = false;
 	$scope.response = [];
+	$scope.btnContent = {}
+
+	function setBtnContent() {
+		var path = $location.path();
+		switch(path) {
+			case "/welcome":
+				$scope.btnContent.text = "start";
+				$scope.btnContent.href = "/questions";
+				break;
+			case "/questions":
+				$scope.btnContent.text = "submit";
+				$scope.btnContent.href = "/thankyou";
+				break;
+			case "/thankyou":
+				$scope.btnContent.text = "done";
+				$scope.btnContent.href = "/welcome";
+				break;
+			default:
+				{}
+		}
+	}
 	
-	$scope.start = function() {
-		$scope.started = true;
-		$location.path("/questions");
+	$scope.onClickBtn = function() {
+		$location.path($scope.btnContent.href);
+		if($scope.btnContent.text == "submit") {
+			$scope.submitted = true;
+			responses.push($scope.response);
+			$scope.response = [];
+		}
 	}
-	$scope.submit = function() {
-		$scope.submitted = true;
-		responses.push($scope.response);
-		$scope.response = [];
-		$location.path("/thankyou");
-	}
+	
+	$scope.$on('$viewContentLoaded', function(){
+		setBtnContent();
+	});
+	
 })
 
-.controller('WelcomeController', function($scope, $routeParams) {
-	$scope.name = "WelcomeController";
-	$scope.params = $routeParams;
-})
+.controller('WelcomeController', function($scope) {})
 
-.controller('QuestionsController', function($scope, $routeParams) {
-	$scope.name = "QuestionsController";
-	$scope.params = $routeParams;
-})
+.controller('QuestionsController', function($scope) {})
 
-.controller('ThankyouController', function($scope, $routeParams) {
-	$scope.name = "ThankyouController";
-	$scope.params = $routeParams;
-})
+.controller('ThankyouController', function($scope) {})
 
 .config(['$routeProvider',
 	function($routeProvider) {
 		$routeProvider
 			.when('/welcome', {
 				templateUrl: 'partials/welcome.html',
-				controller: 'WelcomeController',
-				resolve: {
-					delay: function($q, $timeout) {
-						var delay = $q.defer();
-						$timeout(delay.resolve, 1000);
-						return delay.promise;
-					}
-				}
+				controller: 'WelcomeController'
 			})
-/*			.when('/', {redirectTo: '/welcome'} )
-*/			.when('/questions', {
+			.when('/questions', {
 				templateUrl: 'partials/questions.html',
 				controller: 'QuestionsController'
 			})
