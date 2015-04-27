@@ -18,7 +18,7 @@
           <div class="container-fluid">
             <div class="navbar-header">
               <a class="navbar-brand" href="/quickaudit"><span>Sage</span> Office Solutions</a>
-              <button class="btn btn-sm btn-primary pull-right" data-ng-click="onClickBtn()" data-ng-cloak>{{btnContent.text}}</button>
+              <button class="btn btn-sm btn-primary pull-right" data-ng-click="onClickBtn()" data-ng-cloak ng-disabled="btnContent.text == 'submit' && !validQuestionsForm">{{btnContent.text}}</button>
             </div>
           </div><!-- /.container-fluid -->
         </nav>

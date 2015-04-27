@@ -1,6 +1,9 @@
 var quickAudit = angular.module("quickAudit", ["firebase", "ngRoute"])
 
-.controller("QuickAuditController", function($scope, $route, $routeParams, $location, $firebaseObject) {
+.controller("QuickAuditController", function($rootScope, $scope, $route, $routeParams, $location, $firebaseObject) {
+	
+	$rootScope.validQuestionsForm = false;
+	
 	$scope.$route = $route;
 	$scope.$location = $location;
 	$scope.$routeParams = $routeParams;
@@ -49,11 +52,17 @@ var quickAudit = angular.module("quickAudit", ["firebase", "ngRoute"])
 		setBtnContent();
 	});
 	
+	
+	
 })
 
 .controller('WelcomeController', function($scope) {})
 
-.controller('QuestionsController', function($scope) {})
+.controller('QuestionsController', function($rootScope, $scope) {
+	$scope.$watch('questions.$valid', function(newVal) {
+		$rootScope.validQuestionsForm = newVal;
+	})					
+})
 
 .controller('ThankyouController', function($scope) {})
 

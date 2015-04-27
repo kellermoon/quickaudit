@@ -53,6 +53,20 @@ body {
 	padding-right: 7px;
 	text-transform: lowercase;
 }
+.btn.disabled,
+.btn[disabled],
+.btn.disabled:hover,
+.btn[disabled]:hover,
+.btn.disabled:active,
+.btn[disabled]:active,
+fieldset[disabled] .btn,
+.btn-primary:disabled,
+.btn-primary[disabled],
+.btn-primary[dissbled]:hover {
+	background-color: #6b6f00;
+	border-color: #9b9f30;
+	color: #9b9f30;
+}
 h1.page_header {
 	text-align: center;
 }
@@ -127,6 +141,12 @@ h1.page_header {
 }
 #masthead .btn-primary:active {
 	border-color: #3b3f00;
+}
+#masthead .btn-primary:disabled,
+#masthead .btn-primary[disabled]:active {
+	border-color: #9b9f30;
+	box-shadow: none;
+	-webkit-box-shadow: none;
 }
 #welcome,
 #thankyou {
